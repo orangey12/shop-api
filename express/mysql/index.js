@@ -16,7 +16,8 @@ function query(sql,data){
     return new Promise((resolve,reject)=>{
         connection.getConnection((err,connect)=>{
             connect.query(sql,data,(sqlerr,rows)=>{
-                if(sql.sqlerr){
+                if(sqlerr){
+                    console.log(sqlerr)
                     reject(sqlerr);
                     return;
                 }
@@ -33,3 +34,11 @@ function query(sql,data){
 module.exports = {
     query
 }
+
+
+
+// var sql = require("./sql.js")
+// query(sql["SELECT"],[0,4])
+// .then((data)=>{
+//   console.log(data)
+// })
