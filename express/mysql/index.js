@@ -1,3 +1,10 @@
+/*
+ * @Author: yanmin 
+ * @Date: 2018-12-08 21:03:12 
+ * @Last Modified by: yanmin
+ * @Last Modified time: 2018-12-08 21:03:50
+ */
+
 var mysql = require("mysql");
 
 // 基本配置信息
@@ -11,7 +18,11 @@ var config={
 
 // 创建连接池
 var connection = mysql.createPool(config);
-
+/**
+ * 
+ * @param {* string } sql sql语句
+ * @param {* array } data 参数
+ */
 function query(sql,data){
     return new Promise((resolve,reject)=>{
         connection.getConnection((err,connect)=>{

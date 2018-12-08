@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 // 请求数据
 router.post("/api/list",function(req,res,next){
     var {pagenum,pageLen} = req.body;
-    console.log(pagenum)
+  
     query(sql["SELECT-COUNT"])
     .then((data)=>{
       var count = data[0]["count(*)"];
